@@ -1,0 +1,37 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "hash": "46969913196ee359c44781f8faea9139",
+    "packages": [
+        {
+            "name": "LWS/Framework",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/lemckewebsolutions/Framework.git",
+                "reference": "3d499eea1addebdd6757441064fbf5495ddcab3a"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "LWS\\Framework\\": "src/"
+                }
+            },
+            "description": "Source code of the LWS framework",
+            "time": "2015-08-31 19:26:13"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": {
+        "lws/framework": 20
+    },
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}
