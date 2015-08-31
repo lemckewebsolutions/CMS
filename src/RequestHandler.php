@@ -10,7 +10,7 @@ class RequestHandler extends \LWS\Framework\RequestHandler
 
     protected function getController()
     {
-        if ($_SESSION["user"] === null) {
+        if (isset($_SESSION["user"]) === false) {
             return "LWS\\CMS\\LoginPageController";
         }
 
