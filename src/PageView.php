@@ -20,6 +20,7 @@ class PageView extends View
 
     public function parse()
     {
+        $this->assignVariable("websiteName", $this->getWebsiteName());
         $this->assignVariable("footer", $this->parseFooter());
         $this->assignVariable("head", $this->parseHead());
 
@@ -57,8 +58,7 @@ class PageView extends View
                         "logOutUrl" => Url::LOG_OUT,
                         "userName" => $userName
                     ]
-                ),
-                "websiteName" => $this->getWebsiteName()
+                )
             ]
         );
     }
