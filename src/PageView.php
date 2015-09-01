@@ -50,8 +50,13 @@ class PageView extends View
             static::getTemplateRoot() . "layout/head.inc.tpl",
             [
                 "cssLocation" => $this->getCssLocation(),
-                "loggedIn" => ($this->viewModel->getUser() !== null),
-                "userName" => $userName,
+                "header" => $this->includeTemplate(
+                    static::getTemplateRoot() . "layout/header.inc.tpl",
+                    [
+                        "loggedIn" => ($this->viewModel->getUser() !== null),
+                        "userName" => $userName
+                    ]
+                ),
                 "websiteName" => $this->getWebsiteName()
             ]
         );
