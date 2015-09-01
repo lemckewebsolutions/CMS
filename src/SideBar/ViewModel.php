@@ -35,10 +35,8 @@ class ViewModel
             $categories["Algemeen"] = [];
             array_push($categories["Algemeen"], $item);
 
-            return $categories;
+            $this->categories = $categories;
         }
-
-        return [];
     }
 
     /**
