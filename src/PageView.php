@@ -1,17 +1,18 @@
 <?php
 namespace LWS\CMS;
 
+use LWS\CMS\SideBar\ViewModel;
 use LWS\Framework\Context;
 use LWS\Framework\View;
 
 class PageView extends View
 {
     /**
-     * @var ViewModel;
+     * @var PageViewModel;
      */
     private $viewModel;
 
-    public function __construct($templateFile, ViewModel $viewModel)
+    public function __construct($templateFile, PageViewModel $viewModel)
     {
         parent::__construct($templateFile);
 
@@ -70,7 +71,14 @@ class PageView extends View
      */
     private function parseSideBar()
     {
-        return $this->includeTemplate(static::getTemplateRoot() . "layout/sidebar.inc.tpl");
+        $view = new SideBar\View(
+            static::getTemplateRoot() . "layout/sidebar/sidebar.inc.tpl",
+            new ViewModel(
+                $this->viewModel->getDatabaseConnection(),
+                ($this->viewModel->getUser() !== null)
+            )
+        );
+        return $view->parse();
     }
 
     private function getCssLocation()
