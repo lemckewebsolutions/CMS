@@ -1,6 +1,8 @@
 <?php
 namespace LWS\CMS\SideBar;
 
+use LWS\CMS\PageView;
+
 class View extends \LWS\Framework\View
 {
     /**
@@ -21,8 +23,31 @@ class View extends \LWS\Framework\View
 
     public function parse()
     {
-        $this->assignVariable("categories", $this->viewModel->getCategories());
+        $this->assignVariable("categories", $this->parseCategories());
 
         return parent::parse();
+    }
+
+    /**
+     * @return string
+     * @throws \Exception
+     */
+    private function parseCategories()
+    {
+        $categories = $this->viewModel->getCategories();
+        $parsedCategories = "";
+
+        foreach ($categories as $categoryName => $items)
+        {
+            $parsedCategories .= $this->includeTemplate(
+                PageView::getTemplateRoot() . "layout/sidebar/category.inc.tpl",
+                [
+                    "categoryName" => $categoryName,
+                    "items" => $items
+                ]
+            );
+        }
+
+        return $parsedCategories;
     }
 }

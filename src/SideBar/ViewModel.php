@@ -32,6 +32,7 @@ class ViewModel
             $item = new Item("Inloggen", "/cms");
             $item->setSelected(true);
 
+            $categories["Algemeen"] = [];
             array_push($categories["Algemeen"], $item);
 
             return $categories;
@@ -41,7 +42,7 @@ class ViewModel
     }
 
     /**
-     * @return array
+     * @return Item[]
      */
     public function getCategories()
     {
