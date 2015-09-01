@@ -54,6 +54,7 @@ class PageView extends View
                     static::getTemplateRoot() . "layout/header.inc.tpl",
                     [
                         "loggedIn" => ($this->viewModel->getUser() !== null),
+                        "logOutUrl" => Url::LOG_OUT,
                         "userName" => $userName
                     ]
                 ),

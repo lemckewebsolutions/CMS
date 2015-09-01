@@ -1,7 +1,9 @@
 <?php
 /**
  * @var bool $loggedIn
+ * @var string $logOutUrl
  * @var string $userName
+ * @var string $websiteName
  */
 ?>
 <div class="navbar navbar-fixed-top">
@@ -12,7 +14,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </a>
-            <a class="brand" href="http://cms.moerkerkentweewielers.nl/">Moerkerken Tweewielers</a>
+            <a class="brand" href="http://cms.moerkerkentweewielers.nl/"><?php echo $websiteName?></a>
 
 <?php
 if($loggedIn === true)
@@ -24,7 +26,7 @@ if($loggedIn === true)
                         <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a href="index.php?actie=uitloggen">Log uit</a></li>
+                        <li><a href="<?php echo $logOutUrl?>">Log uit</a></li>
                     </ul>
                 </div>
 <?php
