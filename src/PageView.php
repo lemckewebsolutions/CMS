@@ -7,6 +7,8 @@ use LWS\Framework\View;
 
 class PageView extends View
 {
+    private $cssFiles = [];
+
     /**
      * @var PageViewModel;
      */
@@ -52,6 +54,7 @@ class PageView extends View
         return $this->includeTemplate(
             static::getTemplateRoot() . "layout/head.inc.tpl",
             [
+                "cssFiles" => $this->cssFiles,
                 "cssLocation" => $this->getCssLocation(),
                 "header" => $this->includeTemplate(
                     static::getTemplateRoot() . "layout/header.inc.tpl",
@@ -79,6 +82,13 @@ class PageView extends View
             )
         );
         return $view->parse();
+    }
+
+    public function addCssFile($filePath)
+    {
+        if (in_array($filePath, $this->cssFiles) === false) {
+            $this->cssFiles[] = $filePath;
+        }
     }
 
     private function getCssLocation()

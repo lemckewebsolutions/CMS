@@ -1,5 +1,6 @@
 <?php
 /**
+ * @var string[] $cssFiles
  * @var string $cssLocation
  * @var string $header
  * @var string $websiteName
@@ -18,6 +19,15 @@
     <!-- Le styles -->
     <link href="<?php echo $cssLocation?>bootstrap.css" rel="stylesheet">
     <link href="<?php echo $cssLocation?>bootstrap-responsive.css" rel="stylesheet">
+<?php
+if (count($cssFiles) > 0) {
+    foreach ($cssFiles as $cssFile) {
+?>
+    <link href="<?php echo $cssLocation . $cssFile?>" rel="stylesheet">
+<?php
+    }
+}
+?>
     <style type="text/css">
         body {
             padding-top: 60px;

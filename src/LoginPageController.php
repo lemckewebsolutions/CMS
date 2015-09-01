@@ -13,6 +13,8 @@ class LoginPageController implements IGet
             new PageViewModel($this->getDatabaseConnection())
         );
 
+        $view->addCssFile("signin.css");
+
         Context::getResponse()->setBody($view->parse());
     }
 
