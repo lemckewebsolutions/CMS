@@ -23,6 +23,7 @@ class PageView extends View
         $this->assignVariable("websiteName", $this->getWebsiteName());
         $this->assignVariable("footer", $this->parseFooter());
         $this->assignVariable("head", $this->parseHead());
+        $this->assignVariable("sideBar", $this->parseSideBar());
 
         return parent::parse();
     }
@@ -61,6 +62,15 @@ class PageView extends View
                 )
             ]
         );
+    }
+
+    /**
+     * @return string
+     * @throws \Exception
+     */
+    private function parseSideBar()
+    {
+        return $this->includeTemplate(static::getTemplateRoot() . "layout/sidebar.inc.tpl");
     }
 
     private function getCssLocation()
