@@ -6,32 +6,31 @@
  * @var string $websiteName
  */
 ?>
-<div class="navbar navbar-fixed-top">
-    <div class="navbar-inner">
-        <div class="container-fluid">
-            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toon menu</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
-            </a>
-            <a class="brand" href="http://cms.moerkerkentweewielers.nl/"><?php echo $websiteName?></a>
-
+            </button>
+            <a class="navbar-brand" href="/"><?php echo $websiteName?></a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
 <?php
-if($loggedIn === true)
-{
+if($loggedIn === true) {
 ?>
-                <div class="btn-group pull-right">
-                    <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="icon-user"></i> <?php echo $userName?>
-                        <span class="caret"></span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a href="<?php echo $logOutUrl?>">Log uit</a></li>
-                    </ul>
-                </div>
+                <li><a href="/logout">Uitloggen</a></li>
+<?php
+} else {
+?>
+                <li><a href="/login">Inloggen</a></li>
 <?php
 }
 ?>
+            </ul>
         </div>
     </div>
-</div>
+</nav>
