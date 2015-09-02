@@ -28,21 +28,6 @@ if (count($cssFiles) > 0) {
     }
 }
 ?>
-    <style type="text/css">
-        body {
-            padding-top: 60px;
-            padding-bottom: 40px;
-        }
-        .sidebar-nav {
-            padding: 9px 0;
-        }
-
-        textarea
-        {
-            width: 500px;
-        }
-    </style>
-
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 </head>
 <body>
