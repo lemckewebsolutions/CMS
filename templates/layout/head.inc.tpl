@@ -17,7 +17,7 @@
     <meta name="author" content="">
 
     <!-- Le styles -->
-    <link href="<?php echo $cssLocation?>bootstrap.css" rel="stylesheet">
+    <link href="<?php echo $cssLocation?>bootstrap.min.css" rel="stylesheet">
     <link href="<?php echo $cssLocation?>bootstrap-responsive.css" rel="stylesheet">
 <?php
 if (count($cssFiles) > 0) {
