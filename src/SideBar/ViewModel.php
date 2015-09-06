@@ -32,7 +32,7 @@ class ViewModel extends \LWS\Framework\ViewModel
      */
     public function getCategories()
     {
-        if ($this->categories === null) {
+        if (isset($this->categories) === false) {
             $this->loadCategories();
         }
         return $this->categories;
