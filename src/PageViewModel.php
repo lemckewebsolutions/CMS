@@ -1,18 +1,10 @@
 <?php
 namespace LWS\CMS;
 
-class PageViewModel
+use LWS\Framework\ViewModel;
+
+class PageViewModel extends ViewModel
 {
-    /**
-     * @var \mysqli
-     */
-    private $databaseConnection;
-
-    /**
-     * @var User;
-     */
-    private $user;
-
     public function __construct(\mysqli $databaseConnection)
     {
         $this->databaseConnection = $databaseConnection;

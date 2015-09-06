@@ -9,9 +9,12 @@ class IndexPageController implements IGet
 {
     public function get()
     {
+        $viewModel = new PageViewModel(Context::getDatabaseConnection());
+        $viewModel->setUser($_SESSION["user"]);
+
         $view = new PageView(
             PageView::getTemplateRoot() . "index.tpl",
-            new PageViewModel(Context::getDatabaseConnection())
+            $viewModel
         );
 
         $view->addCssFile("cms.css");

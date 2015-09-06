@@ -1,20 +1,8 @@
 <?php
 namespace LWS\CMS\SideBar;
 
-class ViewModel
+class ViewModel extends \LWS\Framework\ViewModel
 {
-    private $categories;
-
-    /**
-     * @var bool
-     */
-    private $loggedIn = false;
-
-    /**
-     * @var \mysqli
-     */
-    private $databaseConnection;
-
     /**
      * @param \mysqli $databaseConnection
      * @param bool $loggedIn
