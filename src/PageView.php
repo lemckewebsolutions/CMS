@@ -74,7 +74,7 @@ class PageView extends View
     private function parseSideBar()
     {
         if (isset($this->sidebarViewModel) === false ||
-            !$this->sidebarViewModel instanceof ViewModel)
+            ($this->sidebarViewModel instanceof ViewModel) === false)
         {
             throw new \Exception("side bar view model not set correctly");
         }
