@@ -12,7 +12,7 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/lemckewebsolutions/Framework.git",
-                "reference": "c70d2e0b92793acf3db0752d1a9d7232034ca43b"
+                "reference": "c01f76187957b0cd63334f0798105bf81919276e"
             },
             "type": "library",
             "autoload": {
@@ -21,7 +21,7 @@
                 }
             },
             "description": "Source code of the LWS framework",
-            "time": "2015-09-01 19:15:18"
+            "time": "2015-09-06 13:55:36"
         }
     ],
     "packages-dev": [],

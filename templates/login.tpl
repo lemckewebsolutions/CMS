@@ -7,7 +7,7 @@
 echo $head;
 ?>
 <div class="container">
-    <form class="form-signin">
+    <form class="form-signin" action="<?php echo LWS\CMS\Url::LOG_IN?>" method="POST">
         <h2 class="form-signin-heading">Inloggen</h2>
         <input type="email" id="inputEmail" class="form-control" placeholder="Email adres" required autofocus>
         <input type="password" id="inputPassword" class="form-control" placeholder="Wachtwoord" required><br>

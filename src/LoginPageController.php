@@ -1,11 +1,14 @@
 <?php
 namespace LWS\CMS;
 
-use LWS\Framework\Context;
-use LWS\Framework\IGet;
+use LWS\CMS\User\LoginHandler;
+use LWS\Framework\Http\Context;
+use LWS\Framework\Http\IGet;
+use LWS\Framework\Http\IPost;
 
-class LoginPageController implements IGet
+class LoginPageController implements IGet, IPost
 {
+
     public function get()
     {
         $view = new PageView(
@@ -16,6 +19,19 @@ class LoginPageController implements IGet
         $view->addCssFile("signin.css");
 
         Context::getResponse()->setBody($view->parse());
+    }
+
+    public function post()
+    {
+        $loginHandler = new LoginHandler($this->getDatabaseConnection());
+        $loginSuccessful = $loginHandler->handleLogin();
+
+        if ($loginSuccessful === true) {
+            return $this->get();
+        }
+
+        Context::getResponse()->setLocation("/cms");
+        return null;
     }
 
     /**

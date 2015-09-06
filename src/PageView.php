@@ -2,7 +2,7 @@
 namespace LWS\CMS;
 
 use LWS\CMS\SideBar\ViewModel;
-use LWS\Framework\Context;
+use LWS\Framework\Http\Context;
 use LWS\Framework\View;
 
 class PageView extends View
