@@ -14,6 +14,8 @@ class IndexPageController implements IGet
             new PageViewModel(Context::getDatabaseConnection())
         );
 
+        $view->addCssFile("cms.css");
+
         Context::getResponse()->setBody($view->parse());
     }
 }

@@ -4,7 +4,7 @@
  * @var LWS\CMS\SideBar\Item[] $items
  */
 ?>
-<li class="nav-header"><?php echo $categoryName?></li>
+<ul class="nav nav-sidebar">
 <?php
 foreach ($items as $item) {
     $class = "";
@@ -13,11 +13,12 @@ foreach ($items as $item) {
         $class = "class=\"active\" ";
     }
 ?>
-<li>
-    <a <?php echo $class?>href="<?php echo $item->getUrl()?>" title="<?php echo $item->getName()?>">
-        <?php echo $item->getName()?>
-    </a>
-</li>
+    <li <?php echo $class?>>
+        <a href="<?php echo $item->getUrl()?>" title="<?php echo $item->getName()?>">
+            <?php echo $item->getName()?>
+        </a>
+    </li>
 <?php
 }
 ?>
+</ul>

@@ -5,5 +5,11 @@
  * @var string $sideBar
  */
 echo $head;
-echo $sideBar;
+?>
+<div class="container-fluid">
+    <div class="row">
+        <?php echo $sideBar?>
+    </div>
+</div>
+<?php
 echo $footer;

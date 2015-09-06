@@ -3,10 +3,6 @@
  * @var string $categories
  */
 ?>
-<div class="span3">
-    <div class="well sidebar-nav">
-        <ul class="nav nav-list">
-            <?php echo $categories?>
-        </ul>
-    </div>
+<div class="col-sm-3 col-md-2 sidebar">
+    <?php echo $categories?>
 </div>
