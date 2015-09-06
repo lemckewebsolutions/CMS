@@ -14,6 +14,6 @@ class RequestHandler extends \LWS\Framework\RequestHandler
             return "LWS\\CMS\\LoginPageController";
         }
 
-        return "LWS\\CMS\\IndexPageController";
+        return "";
     }
 }
