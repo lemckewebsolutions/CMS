@@ -74,13 +74,17 @@ class PageView extends View
      */
     private function parseSideBar()
     {
+        if (isset($this->sidebarViewModel) === false ||
+            !$this->sidebarViewModel instanceof ViewModel)
+        {
+            throw new \Exception("side bar view model not set correctly");
+        }
+
         $view = new SideBar\View(
             static::getTemplateRoot() . "layout/sidebar/sidebar.inc.tpl",
-            new ViewModel(
-                $this->viewModel->getDatabaseConnection(),
-                ($this->viewModel->getUser() !== null)
-            )
+           $this->sidebarViewModel
         );
+
         return $view->parse();
     }
 

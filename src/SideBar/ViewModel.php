@@ -1,7 +1,7 @@
 <?php
 namespace LWS\CMS\SideBar;
 
-class ViewModel extends \LWS\Framework\ViewModel
+abstract class ViewModel extends \LWS\Framework\ViewModel
 {
     /**
      * @param \mysqli $databaseConnection
@@ -13,19 +13,7 @@ class ViewModel extends \LWS\Framework\ViewModel
         $this->loggedIn = (bool)$loggedIn;
     }
 
-    private function loadCategories()
-    {
-        $categories = [];
-        if ($this->loggedIn === false) {
-            $item = new Item("Inloggen", "/cms");
-            $item->setSelected(true);
-
-            $categories["Algemeen"] = [];
-            array_push($categories["Algemeen"], $item);
-
-            $this->categories = $categories;
-        }
-    }
+    protected abstract function loadCategories();
 
     /**
      * @return Item[]
