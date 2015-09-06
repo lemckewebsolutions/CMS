@@ -13,7 +13,8 @@ class LoginPageController implements IGet, IPost
     {
         $view = new PageView(
             PageView::getTemplateRoot() . "login.tpl",
-            new PageViewModel(Context::getDatabaseConnection())
+            new PageViewModel(Context::getDatabaseConnection()),
+            false
         );
 
         $view->addCssFile("signin.css");

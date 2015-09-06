@@ -9,16 +9,12 @@ class PageView extends View
 {
     private $cssFiles = [];
 
-    /**
-     * @var PageViewModel;
-     */
-    private $viewModel;
-
-    public function __construct($templateFile, PageViewModel $viewModel)
+    public function __construct($templateFile, PageViewModel $viewModel, $parseSideBar = true)
     {
         parent::__construct($templateFile);
 
         $this->viewModel = $viewModel;
+        $this->parseSideBar = (bool)$parseSideBar;
     }
 
     public function parse()
@@ -26,7 +22,10 @@ class PageView extends View
         $this->assignVariable("websiteName", $this->getWebsiteName());
         $this->assignVariable("footer", $this->parseFooter());
         $this->assignVariable("head", $this->parseHead());
-        $this->assignVariable("sideBar", $this->parseSideBar());
+
+        if ($this->parseSideBar === true) {
+            $this->assignVariable("sideBar", $this->parseSideBar());
+        }
 
         return parent::parse();
     }
