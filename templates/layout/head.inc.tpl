@@ -27,7 +27,7 @@ if (count($cssFiles) > 0) {
     }
 }
 ?>
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
 </head>
 <body>
     <?php echo $header?>
