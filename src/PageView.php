@@ -22,6 +22,7 @@ class PageView extends View
         $this->assignVariable("websiteName", $this->getWebsiteName());
         $this->assignVariable("footer", $this->parseFooter());
         $this->assignVariable("head", $this->parseHead());
+        $this->assignVariable("notifications", $this->parseNotifications());
 
         if ($this->parseSideBar === true) {
             $this->assignVariable("sideBar", $this->parseSideBar());
@@ -65,6 +66,27 @@ class PageView extends View
                 )
             ]
         );
+    }
+
+    /**
+     * @return string
+     */
+    private function parseNotifications()
+    {
+        $notifications = "";
+
+        foreach ($this->viewModel->getNotifications() as $notification)
+        {
+            $notifications .= $this->includeTemplate(
+                static::getTemplateRoot() . "layout/notification.inc.tpl",
+                [
+                    "message" => $notification->getMessage(),
+                    "level" => $notification->getLevel()
+                ]
+            );
+        }
+
+        return $notifications;
     }
 
     /**

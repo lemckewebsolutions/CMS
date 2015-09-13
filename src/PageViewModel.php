@@ -1,6 +1,7 @@
 <?php
 namespace LWS\CMS;
 
+use LWS\Framework\Http\Context;
 use LWS\Framework\ViewModel;
 
 class PageViewModel extends ViewModel
@@ -16,6 +17,14 @@ class PageViewModel extends ViewModel
     public function getDatabaseConnection()
     {
         return $this->databaseConnection;
+    }
+
+    /**
+     * @return \LWS\Framework\Notification[]
+     */
+    public function getNotifications()
+    {
+        return Context::getNotifications();
     }
 
     /**
