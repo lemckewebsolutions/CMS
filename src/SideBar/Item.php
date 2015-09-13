@@ -9,11 +9,6 @@ class Item
     private $name;
 
     /**
-     * @var bool
-     */
-    private $selected = false;
-
-    /**
      * @var string
      */
     private $url;
@@ -37,15 +32,7 @@ class Item
      */
     public function isSelected()
     {
-        return $this->selected;
-    }
-
-    /**
-     * @param boolean $selected
-     */
-    public function setSelected($selected)
-    {
-        $this->selected = (bool)$selected;
+        return (rtrim(strtok($_SERVER["REQUEST_URI"],'?'), "/") === $this->getUrl());
     }
 
     /**

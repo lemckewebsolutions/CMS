@@ -27,7 +27,7 @@ class LoginPageController implements IGet, IPost
         $loginHandler = new LoginHandler(Context::getDatabaseConnection());
         $loginSuccessful = $loginHandler->handleLogin();
 
-        if ($loginSuccessful === true) {
+        if ($loginSuccessful === false) {
             return $this->get();
         }
 

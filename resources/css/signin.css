@@ -1,5 +1,6 @@
 body {
   padding-bottom: 40px;
+  padding-top: 40px;
   background-color: #eee;
 }
 
@@ -36,10 +37,4 @@ body {
   margin-bottom: 10px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
-}
-
-@media (min-width: 980px) {
-  .container {
-    padding-top: 35px;
-  }
 }
