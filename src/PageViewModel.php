@@ -20,7 +20,7 @@ class PageViewModel extends ViewModel
     }
 
     /**
-     * @return \LWS\Framework\Notification[]
+     * @return \LWS\Framework\Notifications\Container
      */
     public function getNotifications()
     {
