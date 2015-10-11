@@ -4,7 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "46969913196ee359c44781f8faea9139",
+    "hash": "1b63c1c2afe53752d4c48024b54a3786",
+    "content-hash": "7508cf6a9541d7bea4c2f4674f7bce6b",
     "packages": [
         {
             "name": "LWS/Framework",
@@ -12,7 +13,7 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/lemckewebsolutions/Framework.git",
-                "reference": "b405dcc457634e6689aff7ba4f1806dac30adebf"
+                "reference": "745f67c2032b0c669b64cb4d015247deb181f495"
             },
             "type": "library",
             "autoload": {
@@ -21,7 +22,7 @@
                 }
             },
             "description": "Source code of the LWS framework",
-            "time": "2015-09-13 13:19:11"
+            "time": "2015-10-11 13:35:07"
         }
     ],
     "packages-dev": [],
