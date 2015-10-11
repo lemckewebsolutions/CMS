@@ -5,7 +5,7 @@ use LWS\CMS\User\LoginHandler;
 use LWS\Framework\Http\Context;
 use LWS\Framework\Http\IGet;
 use LWS\Framework\Http\IPost;
-use LWS\Framework\Notification;
+use LWS\Framework\Notifications\Notification;
 
 class LoginPageController implements IGet, IPost
 {
