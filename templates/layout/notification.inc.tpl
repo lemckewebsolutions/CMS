@@ -4,13 +4,13 @@
  * @var int $level
  */
 switch ($level) {
-    case \LWS\Framework\Notification::LEVEL_SUCCESS:
+    case \LWS\Framework\Notifications\Notification::LEVEL_SUCCESS:
         $class = "alert-success";
         break;
-    case \LWS\Framework\Notification::LEVEL_WARNING:
+    case \LWS\Framework\Notifications\Notification::LEVEL_WARNING:
         $class = "alert-warning";
         break;
-    case \LWS\Framework\Notification::LEVEL_ERROR:
+    case \LWS\Framework\Notifications\Notification::LEVEL_ERROR:
         $class = "alert-danger";
         break;
     default:
