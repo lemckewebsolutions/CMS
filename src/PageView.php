@@ -75,7 +75,7 @@ class PageView extends View
     {
         $notifications = "";
 
-        while ($notification = array_shift($notifications))
+        while ($notification = array_shift($this->viewModel->getNotifications()))
         {
             $notifications .= $this->includeTemplate(
                 static::getTemplateRoot() . "layout/notification.inc.tpl",
