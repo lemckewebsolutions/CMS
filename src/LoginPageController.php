@@ -5,6 +5,7 @@ use LWS\CMS\User\LoginHandler;
 use LWS\Framework\Http\Context;
 use LWS\Framework\Http\IGet;
 use LWS\Framework\Http\IPost;
+use LWS\Framework\Http\Status;
 use LWS\Framework\Notifications\Notification;
 
 class LoginPageController implements IGet, IPost
@@ -35,6 +36,7 @@ class LoginPageController implements IGet, IPost
         Context::addNotification(new Notification("Succesvol ingelogd!", Notification::LEVEL_NOTIFICATION));
 
         Context::getResponse()->setLocation("/cms");
+        Context::getResponse()->setStatus(Status::SEE_OTHER);
         return null;
     }
 }
