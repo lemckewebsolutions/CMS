@@ -14,6 +14,13 @@ class RequestHandler extends \LWS\Framework\RequestHandler
             return "LWS\\CMS\\LoginPageController";
         }
 
-        return "";
+        $requestUri = strtok($_SERVER["REQUEST_URI"],'?');
+
+        switch ($requestUri) {
+            case Url::USERS:
+                return "LWS\\CMS\\UsersPageController";
+            default:
+                return "";
+        }
     }
 }
