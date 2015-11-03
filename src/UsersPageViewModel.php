@@ -2,7 +2,7 @@
 
 namespace LWS\CMS;
 
-use LWS\JufThirza\Commands\RetrieveUsersCommand;
+use LWS\CMS\Commands\RetrieveUsersCommand;
 
 class UsersPageViewModel extends PageViewModel
 {
