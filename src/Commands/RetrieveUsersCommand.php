@@ -1,6 +1,6 @@
 <?php
 
-namespace LWS\JufThirza\Commands;
+namespace LWS\CMS\Commands;
 
 use LWS\CMS\User;
 use LWS\Framework\Database\MySqlCommand;
