@@ -26,8 +26,8 @@ class RetrieveUsersCommand extends MySqlCommand
 
         while ($row = $result->fetch_object()) {
             $user = new User();
-            $user->setUserId($row->userId);
-            $user->setUserName($row->userName);
+            $user->setUserId($row->userid);
+            $user->setUserName($row->username);
 
             $users[$row->userid] = $user;
         }

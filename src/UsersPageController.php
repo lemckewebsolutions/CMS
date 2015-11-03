@@ -2,6 +2,7 @@
 
 namespace LWS\CMS;
 
+use LWS\CMS\SideBar\ViewModel;
 use LWS\Framework\Http\Context;
 use LWS\Framework\Http\IGet;
 use LWS\Framework\Http\IPost;
@@ -17,6 +18,7 @@ class UsersPageController implements IGet, IPost
             PageView::getTemplateRoot() . "users.tpl",
             $viewModel
         );
+        $view->sidebarViewModel = new ViewModel(Context::getDatabaseConnection(), true);
 
         $view->addCssFile("cms.css");
 
