@@ -7,17 +7,7 @@ use LWS\Framework\Http\Context;
 
 class LoginHandler
 {
-    /**
-     * @var \mysqli
-     */
-    private $databaseConnection;
-
-    public function __construct(\mysqli $databaseConnection)
-    {
-        $this->databaseConnection = $databaseConnection;
-    }
-
-    public function handleLogin()
+    public function handleLogin(\mysqli $databaseConnection)
     {
         if (isset($_POST["username"]) === false ||
             isset($_POST["password"]) === false) {
@@ -27,8 +17,8 @@ class LoginHandler
         $username = (string)$_POST["username"];
         $password = (string)$_POST["password"];
 
-        $loginCommand = new LoginCommand($this->databaseConnection);
-        $user = $loginCommand->execute($username, $password, $this->getSalt());
+        $loginCommand = new LoginCommand($databaseConnection);
+        $user = $loginCommand->execute($username, $this->saltPassword($password));
 
         if ($user instanceof User) {
             $_SESSION["user"] = $user;
@@ -36,6 +26,11 @@ class LoginHandler
         }
 
         return false;
+    }
+
+    public function saltPassword($password)
+    {
+        return md5($this->getSalt() . md5($password));
     }
 
     private function getSalt()

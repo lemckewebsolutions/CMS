@@ -16,12 +16,11 @@ class LoginCommand
         $this->databaseConnection = $databaseConnection;
     }
 
-    public function execute($username, $password, $salt)
+    public function execute($username, $password)
     {
         $db = $this->databaseConnection;
 
         $username = strtolower(mysqli_real_escape_string($db, $username));
-        $password = $this->saltPassword($password, $salt);
 
         $query = "select
                     u.userid,
@@ -50,10 +49,5 @@ class LoginCommand
         }
 
         return $user;
-    }
-
-    private function saltPassword($password, $salt)
-    {
-        return md5($salt . md5(mysqli_real_escape_string($this->databaseConnection, $password)));
     }
 }
