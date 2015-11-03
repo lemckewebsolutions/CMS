@@ -3,7 +3,7 @@ namespace LWS\CMS\SideBar;
 
 use LWS\CMS\Url;
 
-class ViewModel extends \LWS\Framework\ViewModel
+abstract class ViewModel extends \LWS\Framework\ViewModel
 {
     /**
      * @param \mysqli $databaseConnection
