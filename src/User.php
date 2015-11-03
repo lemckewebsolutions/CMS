@@ -9,6 +9,11 @@ class User
     private $authenticated = false;
 
     /**
+     * @var int
+     */
+    private $userId;
+
+    /**
      * @var string
      */
     private $userName;
@@ -32,6 +37,22 @@ class User
     public function setAuthenticated($authenticated)
     {
         $this->authenticated = (bool)$authenticated;
+    }
+
+    /**
+     * @return int
+     */
+    public function getUserId()
+    {
+        return $this->userId;
+    }
+
+    /**
+     * @param int $value
+     */
+    public function setUserId($value)
+    {
+        $this->userId = (int)$value;
     }
 
     /**

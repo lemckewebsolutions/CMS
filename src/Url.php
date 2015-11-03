@@ -6,4 +6,5 @@ abstract class Url
     const INDEX = "/cms";
     const LOG_IN = "/cms/inloggen";
     const LOG_OUT = "/cms/uitloggen";
+    const USERS = "/cms/users";
 }

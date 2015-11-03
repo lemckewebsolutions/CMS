@@ -1,6 +1,8 @@
 <?php
 namespace LWS\CMS\SideBar;
 
+use LWS\CMS\Url;
+
 abstract class ViewModel extends \LWS\Framework\ViewModel
 {
     /**
@@ -13,15 +15,23 @@ abstract class ViewModel extends \LWS\Framework\ViewModel
         $this->loggedIn = (bool)$loggedIn;
     }
 
-    protected abstract function loadCategories();
+    protected function loadNavigationItems()
+    {
+        $categories = [];
+        $categories["Algemeen"][] = new Item("Start", Url::INDEX);
+
+        $categories["Admin"][] = new Item("Gebruikers", Url::USERS);
+
+        $this->categories = $categories;
+    }
 
     /**
      * @return Item[]
      */
-    public function getCategories()
+    public function getNavigationItems()
     {
         if (isset($this->categories) === false) {
-            $this->loadCategories();
+            $this->loadNavigationItems();
         }
         return $this->categories;
     }

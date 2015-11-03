@@ -23,7 +23,7 @@ class View extends \LWS\Framework\View
 
     public function parse()
     {
-        $this->assignVariable("categories", $this->parseCategories());
+        $this->assignVariable("categories", $this->parseNavigationItems());
 
         return parent::parse();
     }
@@ -32,9 +32,9 @@ class View extends \LWS\Framework\View
      * @return string
      * @throws \Exception
      */
-    private function parseCategories()
+    private function parseNavigationItems()
     {
-        $categories = $this->viewModel->getCategories();
+        $categories = $this->viewModel->getNavigationItems();
         $parsedCategories = "";
 
         foreach ($categories as $categoryName => $items)
