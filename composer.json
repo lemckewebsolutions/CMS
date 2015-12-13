@@ -5,10 +5,15 @@
     {
       "type": "git",
       "url": "https://github.com/lemckewebsolutions/Framework.git"
+    },
+    {
+      "type": "git",
+      "url": "https://bitbucket.org/lemckewebsolutions/navigation"
     }
   ],
   "require": {
-    "LWS/Framework": "dev-master"
+    "LWS/Framework": "dev-master",
+    "LWS/FrameworkNavigation": "dev-master"
   },
   "autoload": {
     "psr-4": {

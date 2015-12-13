@@ -1,6 +1,7 @@
 <?php
 namespace LWS\CMS\SideBar;
 
+use LWS\FrameworkNavigation\Item;
 use LWS\CMS\Url;
 
 abstract class ViewModel extends \LWS\Framework\ViewModel

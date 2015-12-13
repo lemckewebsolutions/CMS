@@ -1,7 +1,7 @@
 <?php
 /**
  * @var string $categoryName
- * @var LWS\CMS\SideBar\Item[] $items
+ * @var LWS\FrameworkNavigation\Item[] $items
  */
 ?>
 <ul class="nav nav-sidebar">

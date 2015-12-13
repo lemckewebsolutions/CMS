@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "1b63c1c2afe53752d4c48024b54a3786",
-    "content-hash": "7508cf6a9541d7bea4c2f4674f7bce6b",
+    "hash": "4625ca3808d7d251098bc96574164fd7",
+    "content-hash": "56904880713f3d21b7dff0095b722b9c",
     "packages": [
         {
             "name": "LWS/Framework",
@@ -13,7 +13,7 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/lemckewebsolutions/Framework.git",
-                "reference": "dbec5a1303f34bfd3a763c909420118eb74b44e9"
+                "reference": "9ed470c8f1f63efad4b8244b63d8fa5c18e955dc"
             },
             "type": "library",
             "autoload": {
@@ -22,14 +22,32 @@
                 }
             },
             "description": "Source code of the LWS framework",
-            "time": "2015-10-11 16:06:52"
+            "time": "2015-10-12 16:53:27"
+        },
+        {
+            "name": "LWS/FrameworkNavigation",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://bitbucket.org/lemckewebsolutions/navigation",
+                "reference": "151c0d092cfe6290dd7376628d4b5d1c5e306352"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "LWS\\FrameworkNavigation\\": "src/"
+                }
+            },
+            "description": "Source code of navigation items of LWS Framework",
+            "time": "2015-12-13 11:10:19"
         }
     ],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "lws/framework": 20
+        "lws/framework": 20,
+        "lws/frameworknavigation": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
